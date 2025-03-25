@@ -1,0 +1,9 @@
+POST http://127.0.0.1:5000/soma
+Content-Type: application/json
+
+{
+    "Numero 1:": 10,
+    "Numero 2:": 5
+}
+###
+GET http://127.0.0.1:5000/historico
