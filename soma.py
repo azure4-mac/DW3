@@ -8,6 +8,10 @@ historico = []
 def mostrar_historico():
     return jsonify({"historico": historico})
 
+@app.route("/historico", methods=["DELETE"])
+def deletar_historico():
+    historico.clear()
+    return jsonify({"mensagem": "Histórico apagado com sucesso."})
 
 @app.route("/soma", methods=["POST"])
 def somar():
