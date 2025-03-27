@@ -11,6 +11,6 @@ Content-Type: application/json
   "Numero 2:": 10
 }
 
-### Requisição DELETE para apagar o histórico
-DELETE http://127.0.0.1:5000/historico
+### Requisição DELETE para apagar um item do histórico pelo ID
+DELETE http://127.0.0.1:5000/historico/0 ### mudar para cada id desejado
 Content-Type: application/json
