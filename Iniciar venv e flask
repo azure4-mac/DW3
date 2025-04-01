@@ -1,3 +1,5 @@
 python -m venv venv
 pip install flask
+cd <nome da pasta>
 venv\Scripts\activate
+py <nome do arquivo>.py
