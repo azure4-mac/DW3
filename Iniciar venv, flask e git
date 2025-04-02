@@ -1,0 +1,13 @@
+mkdir <nome>
+cd <nome da pasta>
+python -m venv venv
+venv\Scripts\activate
+pip install flask
+py <nome do arquivo>.py
+
+/////////////
+
+git init
+git add .
+git commit -m "algo"
+git push
