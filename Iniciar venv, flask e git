@@ -1,7 +1,7 @@
 mkdir <nome>
 cd <nome da pasta>
-python -m venv venv
-venv\Scripts\activate
+python -m venv .venv
+.venv\Scripts\activate
 pip install flask
 pip install psycopg[binary]
 py <nome do arquivo>.py
