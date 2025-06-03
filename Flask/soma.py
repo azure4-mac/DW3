@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 historico = []
-contador_id = 0  # ID único para cada operação
+contador_id = 0
 
 @app.route("/historico", methods=["GET"])
 def mostrar_historico():
