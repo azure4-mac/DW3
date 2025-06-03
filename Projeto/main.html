@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Amnipora</title>
 </head>
 <body>
-    
-</body>
-<script>
+    <h1>Bem-vindo ao site Amnipora</h1>
 
-    
-</script>
+    <button onclick="carregar('')">Página Inicial</button>
+    <button onclick="carregar('contatos')">Contatos</button>
+    <button onclick="carregar('empresa')">Empresa</button>
+    <button onclick="carregar('trabalhe-conosco')">Trabalhe Conosco</button>
+
+    <p id="resposta"></p>
+
+    <script>
+        const apiUrl = 'http://127.0.0.1:5000';
+
+        function carregar(endpoint) {
+            fetch(apiUrl + endpoint)
+                .then(res => res.text())
+                .then(texto => {
+                    document.getElementById("resposta").innerText = texto;
+                })
+                .catch(erro => {
+                    document.getElementById("resposta").innerText = "Erro ao conectar com a API";
+                    console.error(erro);
+                });
+        }
+    </script>
+</body>
 </html>
