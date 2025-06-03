@@ -4,6 +4,7 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install flask
 pip install psycopg[binary]
+pip install requests
 py <nome do arquivo>.py
 
 /////////////
