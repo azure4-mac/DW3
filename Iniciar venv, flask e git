@@ -3,6 +3,7 @@ cd <nome da pasta>
 python -m venv .venv
 .venv\Scripts\activate
 pip install flask
+pip install flask flask-cors
 pip install psycopg[binary]
 pip install requests
 py <nome do arquivo>.py
