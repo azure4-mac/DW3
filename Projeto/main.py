@@ -21,4 +21,5 @@ def trabalhe_conosco():
     return "Seja bem-vindo ao sistema de trabalhe conosco!"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
