@@ -8,12 +8,12 @@
 <body>
     <h1>Bem-vindo ao site Amnipora</h1>
 
-    <button onclick="carregar('')">Página Inicial</button>
-    <button onclick="carregar('contatos')">Contatos</button>
+    <a href="/"><button>Página Inicial</button></a>
+    <a href="/login"><button>Login</button></a>
     <button onclick="carregar('empresa')">Empresa</button>
     <button onclick="carregar('trabalhe-conosco')">Trabalhe Conosco</button>
 
-    <p id="resposta"></p>
+    <div id="resposta"></div>
 
     <script>
         const apiUrl = 'http://127.0.0.1:5000/';
@@ -22,7 +22,7 @@
             fetch(apiUrl + endpoint)
                 .then(res => res.text())
                 .then(texto => {
-                    document.getElementById("resposta").innerText = texto;
+                    document.getElementById("resposta").innerHTML = texto;
                 })
                 .catch(erro => {
                     document.getElementById("resposta").innerText = "Erro ao conectar com a API";
