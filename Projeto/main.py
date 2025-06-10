@@ -13,7 +13,6 @@ class LoginForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired(), Length(min=6)])
     submit = SubmitField("Entrar")
 
-# Rotas
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -23,7 +22,7 @@ def login():
     form = LoginForm()
     print(form.validate_on_submit())
     if form.validate_on_submit():
-        return redirect(url_for("home"))  # Corrigido para "home"
+        return redirect(url_for("home")) 
     return render_template("login.html", form=form)
 
 
