@@ -55,3 +55,15 @@ body {
     input[type="submit"]:hover {
       background-color: #1565c0;
     }
+    .back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }

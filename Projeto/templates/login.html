@@ -24,7 +24,8 @@
         <div class="error">{{ error }}</div>
       {% endfor %}
 
-      {{ form.submit() }}
+     {{ form.submit() }}
+    <a href="{{ url_for('home') }}" class="back-link">Voltar para o início</a>
     </form>
   </div>
 
