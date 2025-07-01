@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amnipora</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  <title>Amnipora</title>
+
 </head>
 <body>
-    <h1>Bem-vindo ao site Amnipora</h1>
+  <h1>Bem-vindo ao site Amnipora</h1>
 
+  <div class="btn-group">
     <a href="/"><button>Página Inicial</button></a>
     <a href="/login"><button>Login</button></a>
     <button onclick="carregar('empresa')">Empresa</button>
     <button onclick="carregar('trabalhe-conosco')">Trabalhe Conosco</button>
+  </div>
 
-    <div id="resposta"></div>
+  <div id="resposta"></div>
 
-    <script>
-        const apiUrl = 'http://127.0.0.1:5000/';
+  <script>
+    const apiUrl = 'http://127.0.0.1:5000/';
 
-        function carregar(endpoint) {
-            fetch(apiUrl + endpoint)
-                .then(res => res.text())
-                .then(texto => {
-                    document.getElementById("resposta").innerHTML = texto;
-                })
-                .catch(erro => {
-                    document.getElementById("resposta").innerText = "Erro ao conectar com a API";
-                    console.error(erro);
-                });
-        }
-    </script>
+    function carregar(endpoint) {
+      fetch(apiUrl + endpoint)
+        .then(res => res.text())
+        .then(texto => {
+          document.getElementById("resposta").innerHTML = texto;
+        })
+        .catch(() => {
+          document.getElementById("resposta").innerText = "Erro ao conectar com a API";
+        });
+    }
+  </script>
 </body>
 </html>

@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Login - Amnipora</title>
+  <meta charset="UTF-8">
+  <title>Login - Amnipora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
 <body>
+  <div class="login-container">
     <h2>Login</h2>
-<form method="POST" action="">
-{{ form.hidden_tag() }}
-<p>
-{{ form.email.label }}<br />
-{{ form.email(size=32) }}<br />
-{% for error in form.email.errors %}
-<span style="color: red">[{{ error }}]</span>
-{% endfor %}
-</p>
-<p>
-{{ form.password.label }}<br />
-{{ form.password(size=32) }}<br />
-{% for error in form.password.errors %}
-<span style="color: red">[{{ error }}]</span>
-{% endfor %}
-</p>
-<p>{{ form.submit() }}</p>
-</form>
-<script>
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      
+      <label>{{ form.email.label }}</label>
+      {{ form.email(size=32) }}
+      {% for error in form.email.errors %}
+        <div class="error">{{ error }}</div>
+      {% endfor %}
+
+      <label>{{ form.password.label }}</label>
+      {{ form.password(size=32) }}
+      {% for error in form.password.errors %}
+        <div class="error">{{ error }}</div>
+      {% endfor %}
+
+      {{ form.submit() }}
+    </form>
+  </div>
+
+  <script>
     const apiUrl = 'http://127.0.0.1:5000/';
-</script>
+  </script>
 </body>
 </html>
